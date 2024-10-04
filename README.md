@@ -1,1 +1,1 @@
-_github-pages-challenge-Akellymourab
+_github-pages-challenge-Akellymourab.clean-code.com
