@@ -8,27 +8,19 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/white.css">
+	<link rel="stylesheet" href="dist/theme/sky.css">
 
 	<style>
-		body {
-			font-family: 'DM Serif Display', serif;
-
-		}
 
 		h1, h2, h3 {
 			color: #331c2c;
-			font-family: 'DM Serif Display', serif;
 		}
 
 		p, li {
 			color: #331c2c;
 		}
 
-		pre code {
-			font-size: 1rem;
-			border-radius: 8px;
-		}
+
 	</style>
 
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -45,16 +37,16 @@
 		<section>
 			<h2 style="text-align: center;">Kelly Moura</h2>
 			<div style="display: flex; justify-content: space-between; margin-top: 3rem;">
-				<div style="flex: 1; padding-right: 20px;">
+				<div style="flex: 1; padding-right: 20px; font-size: 38px;">
 					<ul style="list-style-type: disc;">
-						<li>Colaboradora em Softer Livre</li>
-						<li>FullStack Developer</li>
-						<li>PHP com Rapadura</li>
-						<li>E mais um bocado de coisa</li>
+						<li>Ex-Aluna do Projeto SouDev</li>
+						<li>Foi monitora de FullStack na Digital College</li>
+						<li>Software Engineer na Sertão Dev</li>
+						<li>Colaboradora em Projetos de Software Livre para a SECULT</li>
 					</ul>
 				</div>
 				<div style="flex: 0 0 auto;">
-					<img src="dist/img/kelly-moura.jpeg" alt="Kelly Moura" style="width: 400px;">
+					<img src="dist/img/kelly-moura.jpeg" alt="Kelly Moura" style="width: 441px;height: 414px;">
 				</div>
 			</div>
 		</section>
@@ -67,7 +59,7 @@
 		<!-- Slide 2: Código Feioso - PHP -->
 		<section>
 			<h3>Código Feio (PHP)</h3>
-			<pre><code data-line-numbers="2|3|4-7" class="php">
+			<pre><code data-line-numbers="2|3|4-7" class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 class Prod {
   public function t() {
     $d = [["n" => "item1", "q" => 5], ["n" => "item2", "q" => 0]];
@@ -83,9 +75,9 @@ class Prod {
 		<!-- Slide 3: Refatorando - PHP -->
 		<section>
 			<h3>Refatorando (PHP)</h3>
-			<pre><code data-line-numbers="2|3|4-8" class="php">
+			<pre><code data-line-numbers="2|3|4-8" class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 class Produto {
-  public function listarProdutosDisponiveis(array $produtos): void {
+  public function listarProdutosEstoque(array $produtos): void {
     foreach ($produtos as $produto) {
       if ($produto['quantidade'] > 0) {
         echo $produto['nome'];
@@ -100,7 +92,7 @@ class Produto {
 		<!-- Slide 4: Código Feio - JavaScript -->
 		<section>
 			<h3>Código Feio (JavaScript)</h3>
-			<pre><code data-line-numbers="2|3|4-6" class="javascript">
+			<pre><code data-line-numbers="2|3|4-6" class="javascript precode" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 function t() {
   let p = [{n: "item1", q: 5}, {n: "item2", q: 0}];
   p.forEach(function(i) {
@@ -114,8 +106,8 @@ function t() {
 		<!-- Slide 5: Refatorando - JavaScript -->
 		<section>
 			<h3>Refatorando (JavaScript)</h3>
-			<pre><code data-line-numbers="2|3-7" class="javascript">
-function listarProdutosDisponiveis(produtos) {
+			<pre><code data-line-numbers="2|3-7" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+function listarProdutosEstoque(produtos) {
   produtos.forEach(produto => {
     if(produto.quantidade > 0) {
       console.log(produto.nome);
@@ -126,54 +118,90 @@ function listarProdutosDisponiveis(produtos) {
 			<p>Olha só!</p>
 		</section>
 
+
 		<!-- Slide 6: Nomes Significativos -->
 		<section>
-			<h3>Capítulo 1: Nomes Significativos</h3>
+			<h3>Capítulo 2: Nomes Significativos</h3>
 			<br>
 			<p>Exemplo ruim:</p>
-			<pre><code class="php">
+			<pre><code class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 function x($a) { return $a * 0.9; }
 </code></pre>
 			<p>Exemplo limpo:</p>
-			<pre><code class="php">
+			<pre><code class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 function calcularDesconto($preco) { return $preco * 0.9; }
 </code></pre>
 		</section>
 
 		<!-- Slide 7: Funções Pequenas -->
 		<section>
-			<h3>Capítulo 2: Funções Pequenas</h3>
+			<h3>Capítulo 3: Funções claras e objetivas</h3>
 			<br>
-			<p>Funções pequenas são mais fáceis de entender e de manter! Vamos ver um exemplo:</p>
-			<pre><code class="javascript">
+			<p>Funções objetivas são mais fáceis de entender e de manter! Vamos ver uns exemplos:</p>
+			<pre><code data-line-numbers="2|3|4-10" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+//exemplo ruim
+function calcTCarrinho(c) {
+  return c.filter(i => {
+    if (i.tipo === 'produto') {
+      return i;
+    }
+  }).reduce(function (total, item) {
+    total + item.preco, 0
+  });
+}
+</code></pre>
+		</section>
+
+		<section>
+			<pre><code data-line-numbers="2|3|4-6|1-7" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+//exemplo um pouco limpo
 function calcularTotalCarrinho(itens) {
-  return itens.filter(i => i.tipo === 'produto')
+  return itens.filter(i => i.tipo === 'bebida')
               .reduce((total, item) => total + item.preco, 0);
 }
+// calcularTotalCarrinho([]) bebidas e outras coisas
+</code></pre>
+			<pre><code data-line-numbers="2|3|4-9|1-13" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+//exemplo mais limpo
+function calcularTotalCarrinho(itens, tipo) {
+  let total = 0;
+
+  return itens
+          .filter(item => item.tipo === tipo)
+          .reduce((total, item) => total + item.preco, 0);
+}
+
+//calcularTotalCarrinho([], 'bebida')
+//calcularTotalCarrinho([], 'frios')
+//calcularTotalCarrinho([], 'verduras')
 </code></pre>
 		</section>
 
 		<!-- Slide 8: Comentários -->
 		<section>
-			<h3>Capítulo 3: Comentários</h3>
+			<h3>Capítulo 4: Comentários</h3>
 			<br>
 			<p>Exemplo de comentário desnecessário:</p>
-			<pre><code class="php">
-// Incrementa o contador
-$count++;
-</code></pre>
-			<p>Melhorar o nome da variável já diz tudo:</p>
-			<pre><code class="php">
-$contador++;
+			<pre><code data-line-numbers="2-5|7-8|10-11" class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+//Adicionar um novo item ao carrinho
+function addItemToCart(item) {
+  ...
+}
+
+//Pega o valor do input name lá no HTML
+document.getElementById('name').value
+
+//incrementa o contador em 1
+contador++;
 </code></pre>
 		</section>
 
 		<!-- Slide 9: Tratamento de Erros -->
 		<section>
-			<h3>Capítulo 4: Tratamento de Erros</h3>
+			<h3>Capítulo 7: Tratamento de Erros</h3>
 			<br>
 			<p>Trate erros de forma adequada, ao invés de simplesmente ignorá-los.</p>
-			<pre><code class="javascript">
+			<pre><code class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 try {
   // Código que pode falhar
 } catch (e) {
@@ -186,15 +214,20 @@ try {
 		<section>
 			<h3>Capítulo 5: Formatação</h3>
 			<br>
-			<p>Exemplo de formatação ruim:</p>
-			<pre><code class="javascript">
-function foo(){return bar(baz);};
-</code></pre>
-			<p>Formatação limpa:</p>
-			<pre><code class="javascript">
-function foo() {
-  return bar(baz);
-}
+			<pre><code data-line-numbers="2-5|7-8|10-11|13-14" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+let nome = false;
+nome = undefined;
+nome = null;
+nome = 0;
+
+//exemplo ruim
+if (!nome) {}
+
+//exemplo bom
+if (nome === false) {}
+
+//exemplo que te força a fazer do jeito bom
+if (false === nome) {}
 </code></pre>
 		</section>
 
@@ -212,6 +245,16 @@ function foo() {
 		<!-- Slide 12: Fim -->
 		<section>
 			<h3>Isso não é tudo, mas acabou! 🙃</h3>
+		</section>
+
+		<section>
+			<h3>Referencias:</h3>
+			<br>
+			<ul style="list-style-type: disc; justify-content: center">
+				<li>PSR 12 - Style Code para o PHP : <a href="https://www.php-fig.org/psr/psr-12/">https://www.php-fig.org/psr/psr-12</a></li>
+				<li>Airbnb Style Code - para o Javascript : <a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></li>
+				<li>Livros: <strong>Clean Code</strong> e <strong>Agil Limpo</strong></li>
+				<li>Aurora : <a href="https://github.com/secultce/aurora">https://github.com/secultce/aurora</a></li>			</ul>
 		</section>
 	</div>
 </div>
