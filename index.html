@@ -59,7 +59,7 @@
 		<!-- Slide 2: Código Feioso - PHP -->
 		<section>
 			<h3>Código Feio (PHP)</h3>
-			<pre><code data-line-numbers="2|3|4-7" class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+			<pre><code class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 class Prod {
   public function t() {
     $d = [["n" => "item1", "q" => 5], ["n" => "item2", "q" => 0]];
@@ -75,7 +75,7 @@ class Prod {
 		<!-- Slide 3: Refatorando - PHP -->
 		<section>
 			<h3>Refatorando (PHP)</h3>
-			<pre><code data-line-numbers="2|3|4-8" class="php" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+			<pre><code class="" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 class Produto {
   public function listarProdutosEstoque(array $produtos): void {
     foreach ($produtos as $produto) {
@@ -92,7 +92,7 @@ class Produto {
 		<!-- Slide 4: Código Feio - JavaScript -->
 		<section>
 			<h3>Código Feio (JavaScript)</h3>
-			<pre><code data-line-numbers="2|3|4-6" class="javascript precode" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+			<pre><code class="javascript precode" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 function t() {
   let p = [{n: "item1", q: 5}, {n: "item2", q: 0}];
   p.forEach(function(i) {
@@ -106,7 +106,7 @@ function t() {
 		<!-- Slide 5: Refatorando - JavaScript -->
 		<section>
 			<h3>Refatorando (JavaScript)</h3>
-			<pre><code data-line-numbers="2|3-7" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+			<pre><code class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 function listarProdutosEstoque(produtos) {
   produtos.forEach(produto => {
     if(produto.quantidade > 0) {
@@ -138,7 +138,7 @@ function calcularDesconto($preco) { return $preco * 0.9; }
 			<h3>Capítulo 3: Funções claras e objetivas</h3>
 			<br>
 			<p>Funções objetivas são mais fáceis de entender e de manter! Vamos ver uns exemplos:</p>
-			<pre><code data-line-numbers="2|3|4-10" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+			<pre><code class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 //exemplo ruim
 function calcTCarrinho(c) {
   return c.filter(i => {
@@ -153,7 +153,7 @@ function calcTCarrinho(c) {
 		</section>
 
 		<section>
-			<pre><code data-line-numbers="2|3|4-6|1-7" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+			<pre><code data-line-numbers="1-7" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 //exemplo um pouco limpo
 function calcularTotalCarrinho(itens) {
   return itens.filter(i => i.tipo === 'bebida')
@@ -161,7 +161,7 @@ function calcularTotalCarrinho(itens) {
 }
 // calcularTotalCarrinho([]) bebidas e outras coisas
 </code></pre>
-			<pre><code data-line-numbers="2|3|4-9|1-13" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
+			<pre><code data-line-numbers="1-13" class="javascript" style="background-color: beige; color: #6a1520; width: 100%; padding: 10px;">
 //exemplo mais limpo
 function calcularTotalCarrinho(itens, tipo) {
   let total = 0;
@@ -231,17 +231,6 @@ if (false === nome) {}
 </code></pre>
 		</section>
 
-		<!-- Slide 11: Competência Destemida -->
-		<section>
-			<h3>Competência Destemida</h3>
-			<br>
-			<blockquote>
-				"<strong>Não tenha medo de limpar o código!</strong> O que clientes, usuários e gerentes esperam de você é competência destemida!" — Uncle Bob
-			</blockquote>
-			<br>
-			<p>Quando ninguém está olhando, o código limpo ainda é sua responsabilidade.</p>
-		</section>
-
 		<!-- Slide 12: Fim -->
 		<section>
 			<h3>Isso não é tudo, mas acabou! 🙃</h3>
@@ -253,7 +242,7 @@ if (false === nome) {}
 			<ul style="list-style-type: disc; justify-content: center">
 				<li>PSR 12 - Style Code para o PHP : <a href="https://www.php-fig.org/psr/psr-12/">https://www.php-fig.org/psr/psr-12</a></li>
 				<li>Airbnb Style Code - para o Javascript : <a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></li>
-				<li>Livros: <strong>Clean Code</strong> e <strong>Agil Limpo</strong></li>
+				<li>Livros: <strong>Clean Code</strong>
 				<li>Aurora : <a href="https://github.com/secultce/aurora">https://github.com/secultce/aurora</a></li>			</ul>
 		</section>
 	</div>
